@@ -26,5 +26,5 @@ dependencies:
   - nbqa
   - scikit-misc
   - pip:
-    - git+https://github.com/babelomics/ivae_scorer@develop
+   # - git+https://github.com/babelomics/ivae_scorer@develop
     - -e .
