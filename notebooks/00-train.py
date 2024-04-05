@@ -14,12 +14,6 @@ import numpy as np
 import pandas as pd
 import scanpy as sc
 import tensorflow as tf
-from ivae_scorer.models import build_kegg_vae, build_reactome_vae
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import minmax_scale
-from tensorflow.keras import callbacks
-from tensorflow.keras.models import Model
-
 from isrobust.bio import (
     build_hipathia_renamers,
     get_adj_matrices,
@@ -29,6 +23,11 @@ from isrobust.bio import (
 )
 from isrobust.datasets import load_kang
 from isrobust.utils import set_all_seeds
+from ivae_scorer.models import build_kegg_vae, build_reactome_vae
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import minmax_scale
+from tensorflow.keras import callbacks
+from tensorflow.keras.models import Model
 
 args = sys.argv
 
