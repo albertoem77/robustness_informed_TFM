@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-from tensorflow import keras
+import keras
 
 
 @tf.keras.utils.register_keras_serializable()
@@ -38,7 +38,7 @@ class Informed(keras.layers.Dense):
 
         self.kernel_adj = self.add_weight(
             shape=(input_shape[-1], self.units),
-            initializer=tf.keras.initializers.Constant(self.adj),
+            initializer=keras.initializers.Constant(self.adj),
             name="kernel_adj",
             trainable=False,
         )
@@ -53,7 +53,7 @@ class Informed(keras.layers.Dense):
 
         self.bias_adj = self.add_weight(
             shape=(self.units,),
-            initializer=tf.keras.initializers.Constant(connection_vector),
+            initializer=keras.initializers.Constant(connection_vector),
             name="bias_adj",
             trainable=False,
         )
@@ -63,8 +63,8 @@ class Informed(keras.layers.Dense):
     def call(self, inputs):
         """Forward pass."""
 
-        output = tf.keras.backend.dot(inputs, self.kernel * self.kernel_adj)
-        output = tf.keras.backend.bias_add(output, self.bias_adj * self.bias)
+        output = keras.backend.dot(inputs, self.kernel * self.kernel_adj)
+        output = keras.backend.bias_add(output, self.bias_adj * self.bias)
         if self.activation is not None:
             output = self.activation(output)
         return output

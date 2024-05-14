@@ -1,10 +1,10 @@
-import tensorflow.keras.backend as K
-from ivae_scorer.layers import Informed
-from ivae_scorer.utils import set_all_seeds
-from tensorflow.keras import losses, regularizers
-from tensorflow.keras.layers import Dense, Input, Lambda
-from tensorflow.keras.models import Model
-from tensorflow.keras.optimizers import Adam
+import keras.backend as K
+from isrobust_TFM.layers import Informed
+from isrobust_TFM.utils import set_all_seeds
+from keras import losses, regularizers
+from keras.layers import Dense, Input, Lambda
+from keras.models import Model
+from keras.optimizers import Adam
 
 
 def build_kegg_layers(circuits, pathways, act="tanh"):
@@ -75,8 +75,7 @@ def build_vae(layers, seed, learning_rate):
     def sampling(args):
         z_mean, z_log_sigma = args
         epsilon = K.random_normal(
-            shape=(K.shape(z_mean)[0], latent_dim), mean=0.0, stddev=0.1
-        )
+            shape=(K.shape(z_mean)[0], latent_dim), mean=0.0, stddev=0.1)
         return z_mean + K.exp(z_log_sigma) * epsilon
 
     z = Lambda(sampling)([z_mean, z_log_sigma])

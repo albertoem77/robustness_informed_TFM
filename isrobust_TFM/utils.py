@@ -14,7 +14,7 @@ def get_resource_path(fname):
     pathlib.PosixPath
         Path to file.
     """
-    with pkg_resources.path("ivae_scorer.resources", fname) as f:
+    with pkg_resources.path("isrobust_TFM.resources", fname) as f:
         data_file_path = f
 
     return Path(data_file_path)
