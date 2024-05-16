@@ -119,3 +119,16 @@ class InformedInitializer(keras.initializers.Initializer):
         """We need this to make it serializable."""
 
         return {"adj": self.adj, "initializer": self.initializer}
+
+
+
+class InformedConstraint(keras.constraints.Constraint):
+    def __init__(self, adj):
+        self.adj = adj
+ 
+    def __call__(self,w):
+    
+        return w * tf.constant(self.adj, dtype=w.dtype)
+
+    def get_config(self):
+        return {'adj': self.adj.tolist()}
