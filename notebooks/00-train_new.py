@@ -19,16 +19,16 @@ from sklearn.preprocessing import minmax_scale
 from tensorflow.keras import callbacks
 from tensorflow.keras.models import Model
 
-from isrobust_TFM.bio import (
+from isrobust_TFG.bio import (
     build_hipathia_renamers,
     get_adj_matrices,
     get_random_adj,
     get_reactome_adj,
     sync_gexp_adj,
 )
-from isrobust_TFM.CI_VAE_CLASS import InformedVAE
-from isrobust_TFM.datasets import load_kang
-from isrobust_TFM.utils import set_all_seeds
+from isrobust_TFG.CI_VAE_CLASS import InformedVAE
+from isrobust_TFG.datasets import load_kang
+from isrobust_TFG.utils import set_all_seeds
 
 
 def get_importances(data, abs=False):
@@ -230,7 +230,7 @@ if __name__ == "__main__":
     # else:
     #     raise NotImplementedError("Model not yet implemented.")
 
-    from isrobust_TFM.CI_VAE_CLASS import InformedVAE
+    from isrobust_TFG.CI_VAE_CLASS import InformedVAE
 
     model = InformedVAE(
         adjacency_matrices=reactome,
