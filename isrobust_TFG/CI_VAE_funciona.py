@@ -8,8 +8,8 @@ from keras.layers import Dense, Input, Layer
 from keras.models import Model
 from keras.optimizers import Adam
 
-from isrobust_TFM.layers import InformedBiasConstraint, InformedConstraint
-from isrobust_TFM.utils import set_all_seeds
+from isrobust_TFG.layers import InformedBiasConstraint, InformedConstraint
+from isrobust_TFG.utils import set_all_seeds
 
 
 class Sampling(Layer):

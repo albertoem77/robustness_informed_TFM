@@ -2,7 +2,7 @@
 authors = ["albertoem77 <estebanm.alberto@gmail.com>"]
 channels = ["conda-forge"]
 description = "Add a short description here"
-name = "robusted_informed_TFM"
+name = "robusted_informed_TFG"
 platforms = ["linux-64"]
 version = "0.1.0"
 
@@ -36,7 +36,7 @@ python-dotenv = ">=1.0.1,<2"
 tensorflow = "*"
 
 [pypi-dependencies]
-isrobust_TFM = {path = ".", editable = true}
+isrobust_TFG = {path = ".", editable = true}
 
 
 [feature.cuda]

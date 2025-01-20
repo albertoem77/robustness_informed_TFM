@@ -43,16 +43,16 @@ from keras.models import Model
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import minmax_scale
 
-from isrobust_TFM.bio import (
+from isrobust_TF.bio import (
     build_hipathia_renamers,
     get_adj_matrices,
     get_random_adj,
     get_reactome_adj,
     sync_gexp_adj,
 )
-from isrobust_TFM.CI_VAE_CLASS import InformedVAE
-from isrobust_TFM.datasets import load_kang
-from isrobust_TFM.utils import set_all_seeds
+from isrobust_TFG.CI_VAE_CLASS import InformedVAE
+from isrobust_TFG.datasets import load_kang
+from isrobust_TFG.utils import set_all_seeds
 
 
 def get_importances(data, abs=False):

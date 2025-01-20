@@ -6,7 +6,7 @@ include .env
 SHELL := /bin/bash
 FRACS=$$(LANG=en_US seq ${FRAC_START} ${FRAC_STEP} ${FRAC_STOP})
 SEEDS=$$(LANG=en_US seq ${SEED_START} ${SEED_STEP} ${SEED_STOP})
-PY_FILES := isrobust_TFM/*.py
+PY_FILES := isrobust_TFG/*.py
 
 
 all: | install-ivae run-kegg  run-reactome  run-random  run-scoring-kegg  run-scoring-reactome  run-scoring-random
