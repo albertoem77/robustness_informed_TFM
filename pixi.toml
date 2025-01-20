@@ -35,7 +35,7 @@ ruff = ">=0.6.2,<0.7"
 python-dotenv = ">=1.0.1,<2"
 tensorflow = "*"
 
-[pypi-dependencies]
+[tool.pixi.pypi-dependencies]
 isrobust_TFG = {path = ".", editable = true}
 
 
